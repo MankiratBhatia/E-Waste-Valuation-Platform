@@ -1,0 +1,45 @@
+{
+  "condition_multipliers": {
+    "excellent": 1.10,
+    "good": 1.00,
+    "fair": 0.88,
+    "poor": 0.72,
+    "damaged": 0.55
+  },
+  "age_adjustments": {
+    "0-2": 0.00,
+    "3-5": -0.05,
+    "6-8": -0.10,
+    "9-12": -0.15,
+    "13+": -0.20
+  },
+  "battery_health_adjustments": {
+    "above_80": 0.05,
+    "60_to_80": 0.00,
+    "40_to_60": -0.05,
+    "below_40": -0.10
+  },
+  "material_deltas": {
+    "excellent": {
+      "pcb": 0.02,
+      "precious_metals": 0.005,
+      "copper": 0.01
+    },
+    "good": {},
+    "fair": {
+      "pcb": -0.02,
+      "precious_metals": -0.003
+    },
+    "poor": {
+      "pcb": -0.05,
+      "precious_metals": -0.008,
+      "copper": -0.02
+    },
+    "damaged": {
+      "pcb": -0.08,
+      "precious_metals": -0.012,
+      "copper": -0.03,
+      "aluminum": -0.02
+    }
+  }
+}

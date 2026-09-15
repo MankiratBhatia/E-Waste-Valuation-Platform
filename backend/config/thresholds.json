@@ -1,0 +1,35 @@
+{
+  "segmentation": {
+    "high_threshold_inr": 41500.0,
+    "medium_threshold_inr": 12450.0,
+    "labels": {
+      "high": "HIGH",
+      "medium": "MEDIUM",
+      "low": "LOW"
+    },
+    "processing_priority": {
+      "HIGH": 1,
+      "MEDIUM": 2,
+      "LOW": 3
+    }
+  },
+  "pricing": {
+    "base_margin": 0.62,
+    "svi_uplift_factor": 0.12,
+    "min_offer_floor_pct": 0.40
+  },
+  "svi": {
+    "consistency_weight": 0.60,
+    "reliability_weight": 0.40,
+    "default_score": 0.70,
+    "max_score": 1.00,
+    "min_score": 0.10
+  },
+  "learning": {
+    "error_threshold_pct": 0.10,
+    "adjustment_step": 0.05,
+    "max_adjustment": 0.20,
+    "reliability_decay_on_error": 0.05,
+    "reliability_boost_on_accuracy": 0.03
+  }
+}

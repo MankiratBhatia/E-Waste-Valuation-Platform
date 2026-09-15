@@ -1,0 +1,225 @@
+<project name="Terionix-MRIS-Enterprise">
+
+```
+<metadata>
+    <version>3.0.0</version>
+    <author>Shashank A</author>
+    <system_type>Material Recovery Intelligence Platform</system_type>
+    <confidentiality>Role-Based Access Control; SVI Restricted to Admin</confidentiality>
+    <design_principles>
+        <principle>Separation of Concerns</principle>
+        <principle>Config-Driven Logic</principle>
+        <principle>Pre-Arrival Valuation</principle>
+        <principle>Economic Segregation</principle>
+        <principle>Continuous Learning Loop</principle>
+    </design_principles>
+</metadata>
+
+<!-- ================================================= -->
+<!-- MCP ORCHESTRATION LAYER -->
+<!-- ================================================= -->
+
+<mcp_control_layer>
+    <sequential_thinking>
+        <step>Architecture Definition</step>
+        <step>Data Flow Mapping</step>
+        <step>Interface Contracts</step>
+        <step>Validation</step>
+        <step>Implementation</step>
+    </sequential_thinking>
+
+    <stitch_ui>
+        <rule>All UI must be component-based</rule>
+        <rule>No direct coupling with backend logic</rule>
+        <rule>Each component has single responsibility</rule>
+        <rule>3-click usability constraint</rule>
+    </stitch_ui>
+
+    <netlify_deployment>
+        <requirement>Environment separation (dev/prod)</requirement>
+        <requirement>API-first architecture</requirement>
+        <requirement>Scalable backend</requirement>
+        <requirement>Independent deployability</requirement>
+    </netlify_deployment>
+</mcp_control_layer>
+
+<!-- ================================================= -->
+<!-- SYSTEM ARCHITECTURE -->
+<!-- ================================================= -->
+
+<architecture>
+
+    <frontend_layer type="Streamlit">
+        <component name="IntakeValuationPanel">
+            <description>Supplier submits waste batch details</description>
+        </component>
+
+        <component name="RecoveryDashboard">
+            <description>Displays total recovery value, segmentation, trends</description>
+        </component>
+
+        <component name="BatchLifecycleTracker">
+            <description>Tracks status from submission to recovery</description>
+        </component>
+
+        <component name="SupplierIntelligencePanel">
+            <description>Displays SVI rankings and supplier metrics</description>
+        </component>
+
+        <component name="FeedbackReconciliationPanel">
+            <description>Logs actual recovery and updates system intelligence</description>
+        </component>
+    </frontend_layer>
+
+    <api_layer type="FastAPI">
+        <endpoint>/batch/submit</endpoint>
+        <endpoint>/batch/{id}</endpoint>
+        <endpoint>/dashboard</endpoint>
+        <endpoint>/supplier</endpoint>
+        <endpoint>/feedback</endpoint>
+    </api_layer>
+
+    <service_layer>
+        <service name="BatchService">Orchestrates full MRIS pipeline</service>
+        <service name="SupplierService">Handles supplier scoring and SVI updates</service>
+        <service name="FeedbackService">Processes prediction vs actual learning</service>
+    </service_layer>
+
+    <core_engine_layer>
+
+        <engine name="FeatureEngine">
+            <purpose>Convert input into structured feature vector</purpose>
+        </engine>
+
+        <engine name="CompositionEngine">
+            <purpose>Estimate material composition using heuristic rules</purpose>
+            <formula>m_adjusted = m_base + delta_rules</formula>
+        </engine>
+
+        <engine name="ValuationEngine">
+            <purpose>Compute Expected Recovery Value</purpose>
+            <formula>ERV = Σ(m_i × W × P_i × R_c)</formula>
+        </engine>
+
+        <engine name="SegmentationEngine">
+            <purpose>Classify into High / Medium / Low value batches</purpose>
+        </engine>
+
+        <engine name="PricingEngine">
+            <purpose>Compute supplier pricing using SVI</purpose>
+            <formula>Offer = ERV × (base_margin + svi × uplift)</formula>
+        </engine>
+
+        <engine name="LearningEngine">
+            <purpose>Update system based on prediction error</purpose>
+        </engine>
+
+    </core_engine_layer>
+
+    <data_layer type="SQLAlchemy">
+
+        <table name="Suppliers">
+            <field>supplier_id</field>
+            <field>name</field>
+            <field>consistency_score</field>
+            <field>reliability_score</field>
+            <field>svi</field>
+        </table>
+
+        <table name="Batches">
+            <field>batch_id</field>
+            <field>supplier_id</field>
+            <field>device_type</field>
+            <field>specs_json</field>
+            <field>weight</field>
+            <field>condition</field>
+            <field>expected_value</field>
+            <field>actual_value</field>
+            <field>status</field>
+        </table>
+
+        <table name="FeedbackLog">
+            <field>batch_id</field>
+            <field>predicted_value</field>
+            <field>actual_value</field>
+            <field>error_ratio</field>
+        </table>
+
+    </data_layer>
+
+    <config_layer>
+        <file>base_composition.json</file>
+        <file>heuristic_rules.json</file>
+        <file>market_prices.json</file>
+        <file>thresholds.json</file>
+    </config_layer>
+
+</architecture>
+
+<!-- ================================================= -->
+<!-- DATA FLOW -->
+<!-- ================================================= -->
+
+<data_flow>
+    <step>Supplier submits batch</step>
+    <step>Feature vector generation</step>
+    <step>Composition estimation</step>
+    <step>Recovery value calculation</step>
+    <step>Segmentation</step>
+    <step>Dynamic pricing</step>
+    <step>Database persistence</step>
+    <step>Dashboard visualization</step>
+    <step>Feedback loop updates system</step>
+</data_flow>
+
+<!-- ================================================= -->
+<!-- BUSINESS LOGIC -->
+<!-- ================================================= -->
+
+<business_model>
+    <revenue_driver>Material recovery (copper, aluminum, precious metals)</revenue_driver>
+    <value_proposition>Pre-arrival valuation increases efficiency and margins</value_proposition>
+
+    <kpi>
+        <metric>Recovery Value Accuracy</metric>
+        <metric>Supplier Quality Index (SVI)</metric>
+        <metric>Material Yield Efficiency</metric>
+        <metric>Processing Priority Optimization</metric>
+    </kpi>
+</business_model>
+
+<!-- ================================================= -->
+<!-- UI COMPOSITION (STITCH MCP) -->
+<!-- ================================================= -->
+
+<ui_components>
+    <component>BatchFormComponent</component>
+    <component>ValueSummaryComponent</component>
+    <component>CompositionChartComponent</component>
+    <component>SupplierLeaderboardComponent</component>
+    <component>PredictionErrorChart</component>
+</ui_components>
+
+<!-- ================================================= -->
+<!-- DEPLOYMENT (NETLIFY MCP) -->
+<!-- ================================================= -->
+
+<deployment>
+    <backend>FastAPI (cloud deployable)</backend>
+    <frontend>Streamlit (or deployable UI alternative)</frontend>
+    <database>PostgreSQL (production) / SQLite (dev)</database>
+    <config_management>Environment-based configs</config_management>
+</deployment>
+
+<!-- ================================================= -->
+<!-- OBSERVABILITY -->
+<!-- ================================================= -->
+
+<observability>
+    <logging>Structured logging for all pipeline stages</logging>
+    <metrics>Prediction vs Actual Error Tracking</metrics>
+    <audit>Full traceability of batch lifecycle</audit>
+</observability>
+```
+
+</project>

@@ -1,0 +1,65 @@
+{
+  "smartphone": {
+    "copper": 0.15,
+    "aluminum": 0.10,
+    "pcb": 0.30,
+    "lithium": 0.08,
+    "precious_metals": 0.02,
+    "plastic": 0.25,
+    "glass": 0.10
+  },
+  "laptop": {
+    "copper": 0.20,
+    "aluminum": 0.25,
+    "pcb": 0.25,
+    "lithium": 0.10,
+    "precious_metals": 0.015,
+    "plastic": 0.185,
+    "glass": 0.00
+  },
+  "tablet": {
+    "copper": 0.12,
+    "aluminum": 0.20,
+    "pcb": 0.28,
+    "lithium": 0.12,
+    "precious_metals": 0.02,
+    "plastic": 0.20,
+    "glass": 0.08
+  },
+  "desktop": {
+    "copper": 0.25,
+    "aluminum": 0.20,
+    "pcb": 0.30,
+    "lithium": 0.02,
+    "precious_metals": 0.01,
+    "plastic": 0.22,
+    "glass": 0.00
+  },
+  "server": {
+    "copper": 0.30,
+    "aluminum": 0.25,
+    "pcb": 0.25,
+    "lithium": 0.01,
+    "precious_metals": 0.02,
+    "plastic": 0.17,
+    "glass": 0.00
+  },
+  "monitor": {
+    "copper": 0.10,
+    "aluminum": 0.15,
+    "pcb": 0.20,
+    "lithium": 0.00,
+    "precious_metals": 0.005,
+    "plastic": 0.35,
+    "glass": 0.195
+  },
+  "printer": {
+    "copper": 0.12,
+    "aluminum": 0.10,
+    "pcb": 0.18,
+    "lithium": 0.00,
+    "precious_metals": 0.005,
+    "plastic": 0.595,
+    "glass": 0.00
+  }
+}

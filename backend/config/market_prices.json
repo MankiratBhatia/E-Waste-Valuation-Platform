@@ -1,0 +1,24 @@
+{
+  "prices_inr_per_kg": {
+    "copper": 743.85,
+    "aluminum": 195.05,
+    "pcb": 431.60,
+    "lithium": 2365.50,
+    "precious_metals": 5200.00,
+    "plastic": 29.05,
+    "glass": 9.96
+  },
+  "recovery_coefficients": {
+    "copper": 0.90,
+    "aluminum": 0.88,
+    "pcb": 0.70,
+    "lithium": 0.75,
+    "precious_metals": 0.95,
+    "plastic": 0.60,
+    "glass": 0.50
+  },
+  "currency": "INR",
+  "exchange_rate_usd_inr": 83.0,
+  "last_updated": "2026-03-01",
+  "source": "London Metal Exchange + MCX India + Internal Index"
+}
